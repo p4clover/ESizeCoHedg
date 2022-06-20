@@ -1,9 +1,13 @@
 #' @title Calculating the Effect Size of Cohen's d & Hedges' g
 #' @description \code{ESizeCoHedg} calculate the Effect Size & draw the dnorm curve
 #'
+#' @importFrom stats na.omit
+#' @importFrom stats sd
 #' @importFrom stats dnorm
 #' @importFrom graphics curve
 #' @importFrom graphics legend
+#' @param x1 omitted scores of group1
+#' @param x2 omitted scores of group2
 #' @param m1 mean value of group 1
 #' @param m2 mean value of group 2
 #' @param n1 number of group 1
@@ -13,10 +17,11 @@
 #' @return Effect Size of Cohen's d & Hedges' g
 #' @export
 #' @examples
-#' # ESizeCoHedg(x1, x2)
+#' # ESizeCoHedg(X1, X2)
 
-ESizeCoHedg <- function(x1, x2){
-
+ESizeCoHedg <- function(X1, X2){
+  x1 <- na.omit(X1)
+  x2 <- na.omit(X2)
   m1 <- mean(x1)
   m2 <- mean(x2)
   n1 <- length(x1)
