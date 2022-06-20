@@ -11,8 +11,8 @@ The goal of ESizeCoHedg is to ...
 You can install the development version of ESizeCoHedg like so:
 
 ``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
-```
+# install.packages("ESizeCoHedg")
+devtools::install_github("p4clover/ESizeCoHedg")
 
 ## Example
 

@@ -52,3 +52,4 @@ ESizeCoHedg <- function(x1, x2){
   )
   return(list(Cohens_d=d, Hedges_g=g))
 }
+
