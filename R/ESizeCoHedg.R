@@ -4,24 +4,22 @@
 #' @importFrom stats na.omit
 #' @importFrom stats sd
 #' @importFrom stats dnorm
+#' @importFrom utils read.csv
 #' @importFrom graphics curve
 #' @importFrom graphics legend
 #' @param x1 omitted scores of group1
 #' @param x2 omitted scores of group2
-#' @param m1 mean value of group 1
-#' @param m2 mean value of group 2
-#' @param n1 number of group 1
-#' @param n2 number of group 2
-#' @param s1 standard deviation of group 1
-#' @param s2 standard deviation of group 2
 #' @return Effect Size of Cohen's d & Hedges' g
 #' @export
 #' @examples
 #' # ESizeCoHedg(X1, X2)
 
-ESizeCoHedg <- function(X1, X2){
-  x1 <- na.omit(X1)
-  x2 <- na.omit(X2)
+ESizeCoHedg <- function(){
+
+  dat <- read.csv(file.choose(), header=T)
+
+  x1 <- na.omit(dat[,2])
+  x2 <- na.omit(dat[,3])
   m1 <- mean(x1)
   m2 <- mean(x2)
   n1 <- length(x1)
@@ -29,13 +27,11 @@ ESizeCoHedg <- function(X1, X2){
   s1 <- sd(x1)
   s2 <- sd(x2)
 
-  Sp <- sqrt(((n1-1)*s1^2 + (n2-1)*s2^2)/(n1+n2))
-  d <- sqrt((m1 - m2)^2)/Sp
-  d
+  sp1 <- sqrt(((n1-1)*s1^2 + (n2-1)*s2^2)/(n1+n2))
+  d <- abs(m1 - m2)/sp1
 
-  sp <- sqrt(((n1-1)*s1^2 + (n2-1)*s2^2)/(n1+n2-2))
-  g <- sqrt((m1 - m2)^2)/sp
-  g
+  sp2 <- sqrt(((n1-1)*s1^2 + (n2-1)*s2^2)/(n1+n2-2))
+  g <- abs(m1 - m2)/sp2
 
   # x-axix settings
   xmn <- min(c(m1,m2))-max(c(s1,s2))*4

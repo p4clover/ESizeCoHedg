@@ -4,9 +4,13 @@
 \alias{ESizeCoHedg}
 \title{Calculating the Effect Size of Cohen's d & Hedges' g}
 \usage{
-ESizeCoHedg(x1, x2)
+ESizeCoHedg(X1, X2)
 }
 \arguments{
+\item{x1}{omitted scores of group1}
+
+\item{x2}{omitted scores of group2}
+
 \item{m1}{mean value of group 1}
 
 \item{m2}{mean value of group 2}
@@ -26,5 +30,5 @@ Effect Size of Cohen's d & Hedges' g
 \code{ESizeCoHedg} calculate the Effect Size & draw the dnorm curve
 }
 \examples{
-# ESizeCoHedg(x1, x2)
+# ESizeCoHedg(X1, X2)
 }
