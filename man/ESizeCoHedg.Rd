@@ -4,24 +4,12 @@
 \alias{ESizeCoHedg}
 \title{Calculating the Effect Size of Cohen's d & Hedges' g}
 \usage{
-ESizeCoHedg(X1, X2)
+ESizeCoHedg()
 }
 \arguments{
 \item{x1}{omitted scores of group1}
 
 \item{x2}{omitted scores of group2}
-
-\item{m1}{mean value of group 1}
-
-\item{m2}{mean value of group 2}
-
-\item{n1}{number of group 1}
-
-\item{n2}{number of group 2}
-
-\item{s1}{standard deviation of group 1}
-
-\item{s2}{standard deviation of group 2}
 }
 \value{
 Effect Size of Cohen's d & Hedges' g
