@@ -18,5 +18,5 @@ Effect Size of Cohen's d & Hedges' g
 \code{ESizeCoHedg} calculate the Effect Size & draw the dnorm curve
 }
 \examples{
-# ESizeCoHedg(X1, X2)
+# ESizeCoHedg()
 }

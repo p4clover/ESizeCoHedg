@@ -12,20 +12,20 @@
 #' @return Effect Size of Cohen's d & Hedges' g
 #' @export
 #' @examples
-#' # ESizeCoHedg(X1, X2)
+#' # ESizeCoHedg()
 
 ESizeCoHedg <- function(){
 
   dat <- read.csv(file.choose(), header=T)
 
-  x1 <- na.omit(dat[,2])
-  x2 <- na.omit(dat[,3])
-  m1 <- mean(x1)
-  m2 <- mean(x2)
-  n1 <- length(x1)
-  n2 <- length(x2)
-  s1 <- sd(x1)
-  s2 <- sd(x2)
+  d1 <- na.omit(dat[,2])
+  d2 <- na.omit(dat[,3])
+  m1 <- mean(d1)
+  m2 <- mean(d2)
+  n1 <- length(d1)
+  n2 <- length(d2)
+  s1 <- sd(d1)
+  s2 <- sd(d2)
 
   sp1 <- sqrt(((n1-1)*s1^2 + (n2-1)*s2^2)/(n1+n2))
   d <- abs(m1 - m2)/sp1
