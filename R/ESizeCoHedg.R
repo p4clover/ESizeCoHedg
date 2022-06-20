@@ -7,8 +7,6 @@
 #' @importFrom utils read.csv
 #' @importFrom graphics curve
 #' @importFrom graphics legend
-#' @param x1 omitted scores of group1
-#' @param x2 omitted scores of group2
 #' @return Effect Size of Cohen's d & Hedges' g
 #' @export
 #' @examples
